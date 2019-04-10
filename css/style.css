@@ -22,8 +22,9 @@ body {
     perspective: 1000px;
 }
 .profile-card {
-    flex: 1;
-    width: calc(15%);
+    /* flex: 1; */
+    /* width: calc(15%); */
+    flex: 1 0 calc(20%);
     height: 100%;
     /* margin: 5px; */
     position: relative;
@@ -34,7 +35,8 @@ body {
     /* border: 1px solid black; */
 }
 .profile-card:hover {
-    flex: 4;
+    /* flex: 4; */
+    /* flex: 4 0 calc(35%); */
 }
 .profile-card:hover .front-face {
     filter: grayscale(0);
@@ -63,7 +65,7 @@ body {
 }
 .front-face {
     transition: filter 0.5s;
-    filter: grayscale(100%);
+    filter: grayscale(80%);
     height: 100%;
     background-size: cover;
     background-position: center;
@@ -88,4 +90,21 @@ body {
 }
 .dean {
     background-image: url('../assets/profile-pictures/dean.jpg');
+}
+
+/* ************ click and drop ************** */
+.class-gallery {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    /* white-space: nowrap; */
+    user-select: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    transform: scale(0.98);
+    will-change: transform;
+}
+
+.profile-card {
+    /* display: inline-flex; */
+    /* flex-wrap: wrap; */
 }
