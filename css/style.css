@@ -71,25 +71,25 @@ body {
     background-position: center;
 }
 .evans {
-    background-image: url("../assets/profile-pictures/evans.jpg");
+    background-image: url('../assets/profile-pictures/evans.jpg');
 }
 .xurxe {
-    background-image: url("../assets/profile-pictures/xurxe.jpg");
+    background-image: url('../assets/profile-pictures/xurxe.jpg');
 }
 .sherry {
-    background-image: url("../assets/profile-pictures/sherry.jpg");
+    background-image: url('../assets/profile-pictures/sherry.jpg');
 }
 .julia {
-    background-image: url("../assets/profile-pictures/julia.jpg");
+    background-image: url('../assets/profile-pictures/julia.jpg');
 }
 .andre {
-    background-image: url("../assets/profile-pictures/andre.jpg");
+    background-image: url('../assets/profile-pictures/andre.jpg');
 }
 .masood {
-    background-image: url("../assets/profile-pictures/masood.jpg");
+    background-image: url('../assets/profile-pictures/masood.jpg');
 }
 .dean {
-    background-image: url("../assets/profile-pictures/dean.jpg");
+    background-image: url('../assets/profile-pictures/dean.jpg');
 }
 
 /* ************ click and drop ************** */
