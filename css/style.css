@@ -34,9 +34,9 @@ body {
 
     /* border: 1px solid black; */
 }
-.profile-card:hover {
+.profile-card.flip {
     /* flex: 4; */
-    /* flex: 4 0 calc(35%); */
+    flex: 4 0 calc(35%);
 }
 .profile-card:hover .front-face {
     filter: grayscale(0);
