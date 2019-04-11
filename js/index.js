@@ -1,21 +1,25 @@
 // **** Get DOM elements ****
 const classGallery = document.querySelector('.class-gallery');
+const classGallery2 = document.querySelector('.class-gallery2');
 let showInfo;
 
-const buildProfileCard = ({
-    firstName,
-    lastName,
-    title,
-    nationality,
-    src,
-    favoriteQuote,
-    alt,
-    joinedOn,
-    motivatesMe,
-    longTermVision,
-    whySofterDeveloper,
-    skills,
-}) => {
+const buildProfileCard = (
+    {
+        firstName,
+        lastName,
+        title,
+        nationality,
+        src,
+        favoriteQuote,
+        alt,
+        joinedOn,
+        motivatesMe,
+        longTermVision,
+        whySofterDeveloper,
+        skills
+    },
+    i
+) => {
     const profileCard = document.createElement('div');
     profileCard.classList.add('profile-card');
     profileCard.innerHTML = `<div class="front-face" style="background-image: url(../assets/profile-pictures/${src})"></div>
@@ -30,11 +34,14 @@ const buildProfileCard = ({
                 <p class="quote">${favoriteQuote}</p>
                 <h4 class="joined-on">${joinedOn}</h4>
             </div>`;
-    classGallery.appendChild(profileCard);
+    if (i < 5) classGallery.appendChild(profileCard);
+    if (i > 4 && i < 10) classGallery2.appendChild(profileCard);
 };
 
 const renderProfileCard = arr => {
-    arr.forEach(student => buildProfileCard(student));
+    arr.forEach((student, i) => {
+        buildProfileCard(student, i);
+    });
 };
 
 renderProfileCard(studentsInfo);
@@ -48,18 +55,24 @@ function flipCard() {
     console.log(this.dataset);
     this.classList.toggle('flip');
 }
-profileCards.forEach(profileCard => profileCard.addEventListener('click', flipCard));
+profileCards.forEach(profileCard =>
+    profileCard.addEventListener('click', flipCard)
+);
 // ***** hover function ****
 function onMouseEnter() {
     console.log(this);
 
     frontFaces.forEach(front => (front.innerHTML = ''));
-    this.querySelector('.front-face').innerHTML = this.querySelector('.back-face h2').textContent;
+    this.querySelector('.front-face').innerHTML = this.querySelector(
+        '.back-face h2'
+    ).textContent;
 }
-profileCards.forEach(profileCard => profileCard.addEventListener('mouseenter', onMouseEnter));
+profileCards.forEach(profileCard =>
+    profileCard.addEventListener('mouseenter', onMouseEnter)
+);
 
 /* ************ arrow left and right scroll ************** */
-
+const wrapperGallery = document.querySelector('.wrapper-gallery');
 const arrowWrapper = document.querySelectorAll('.arrow');
 let interval;
 let speed = 0;
@@ -70,9 +83,9 @@ function doScroll(direction) {
     clearInterval(interval);
     interval = setInterval(function run() {
         if (direction === 'right') {
-            classGallery.scrollLeft += 1 + speed;
+            wrapperGallery.scrollLeft += 1 + speed;
         } else {
-            classGallery.scrollLeft -= 1 + speed;
+            wrapperGallery.scrollLeft -= 1 + speed;
         }
     }, 10);
 

@@ -17,7 +17,7 @@ body {
 
 /* ************ flipping cards & hover ************** */
 .class-gallery {
-    width: 100vw;
+    width: 50vw;
     height: 100vh;
     display: flex;
     /* flex-wrap: wrap; */
@@ -26,9 +26,9 @@ body {
 }
 
 .profile-card {
-    /* flex: 1; */
+    flex: 1;
     /* width: calc(15%); */
-    flex: 1 0 calc(200px);
+    /* flex: 1 0 calc(200px); */
     height: 100%;
     margin: -1px;
     position: relative;
@@ -38,8 +38,8 @@ body {
     /* border: 1px solid black; */
 }
 .profile-card:hover {
-    /* flex: 4; */
-    flex: 4 0 calc(400px);
+    flex: 4;
+    /* flex: 4 0 calc(400px); */
     transition: all 0.7s ease-in 0.4s;
 }
 
@@ -82,7 +82,7 @@ body {
 }
 
 /* ************ hover and drop ************** */
-.class-gallery {
+.class-gallery3 {
     overflow-x: scroll;
     overflow-y: hidden;
     /* white-space: nowrap; */
@@ -139,4 +139,24 @@ body {
     .arrow-wrapper {
         display: flex;
     }
+}
+
+/* ************ divide gallary************** */
+.wrapper-gallery {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    /* width: 200vw; */
+}
+
+.class-gallery,
+.class-gallery2 {
+    /* width: 500px; */
+    flex: 1 0 100vw;
+    height: 100vh;
+    display: flex;
+    /* justify-items: flex-start; */
+    /* flex-wrap: wrap; */
+    margin: auto;
+    perspective: 1000px;
 }
