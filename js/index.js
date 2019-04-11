@@ -21,13 +21,13 @@ const buildProfileCard = (firstName,
             <div class="back-face profile-info">
                 <h2 class="name">${firstName} ${lastName}</h2>
                 <h3 class="title">${title}</h3>
-                <h3 class="nationality">${nationality}</h3>
-                <h3 class="skills">${skills.join(', ')}</h3>
-                <p class="why-developer">${whySofterDeveloper}</p>
-                <p class="vision">${longTermVision}</p>
-                <p class="motivation">${motivatesMe}</p>
-                <p class="quote">${favoriteQuote}</p>
-                <h4 class="joined-on">${joinedOn}</h4>
+                <h3 class="nationality"><span> Nationality</span></br>${nationality}</h3>
+                <h3 class="skills"><span>Skills</span></br>${skills.join(', ')}</h3>
+                <p class="why-developer"><span>Why-developer</span></br>${whySofterDeveloper}</p>
+                <p class="vision"><span>Vision</span></br>${longTermVision}</p>
+                <p class="motivation"><span>Motivation</span></br>${motivatesMe}</p>
+                <p class="quote"><span>Quote</span></br>${favoriteQuote}</p>
+                <h4 class="joined-on"><span>Joined-On</span></br>${joinedOn}</h4>
             </div>`
     classGallery.appendChild(profileCard);
 }
