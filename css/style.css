@@ -81,7 +81,7 @@ body {
     background-position: center;
 }
 
-/* ************ click and drop ************** */
+/* ************ hover and drop ************** */
 .class-gallery {
     overflow-x: scroll;
     overflow-y: hidden;
@@ -89,8 +89,8 @@ body {
     user-select: none;
     cursor: pointer;
     transition: all 0.2s;
-    transform: scale(0.98);
-    will-change: transform;
+    /* transform: scale(0.98); */
+    /* will-change: transform; */
 }
 
 .arrow-wrapper {
@@ -98,7 +98,7 @@ body {
     width: 0;
     /* background-color: greenyellow; */
     z-index: 1;
-    display: flex;
+    display: none;
     align-items: center;
     top: -500px;
     height: 500px;
@@ -110,6 +110,7 @@ body {
     font-size: 100px;
     transform: scale(0.5, 1.2);
     width: 200px;
+    visibility: 0.4;
 }
 
 .arrow-left {
@@ -120,11 +121,18 @@ body {
 
 .arrow-right {
     left: 100vw;
-    margin-left: -110px;
+    margin-left: -120px;
+    padding-left: 30px;
     /* left: calc(100vw-200px); */
 }
 
 .profile-card {
     /* display: inline-flex; */
     /* flex-wrap: wrap; */
+}
+
+@media only screen and (min-width: 600px) {
+    .arrow-wrapper {
+        display: flex;
+    }
 }

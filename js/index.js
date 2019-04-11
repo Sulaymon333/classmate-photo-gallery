@@ -60,34 +60,39 @@ profileCards.forEach(profileCard => profileCard.addEventListener('mouseenter', o
 
 /* ************ arrow left and right scroll ************** */
 
-const slider = document.querySelector('.class-gallery');
-let isDown = false;
-let startX;
-let scrollLeft;
-slider.addEventListener('mousedown', e => {
-    isDown = true;
-    slider.classList.add('active');
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
+const arrowWrapper = document.querySelectorAll('.arrow');
+let interval;
+let speed = 0;
+// doScroll('right');
+function doScroll(direction) {
+    console.log(speed);
+
+    clearInterval(interval);
+    interval = setInterval(function run() {
+        if (direction === 'right') {
+            classGallery.scrollLeft += 1 + speed;
+        } else {
+            classGallery.scrollLeft -= 1 + speed;
+        }
+    }, 10);
+
+    speed += 2;
+}
+
+function mouseEnter(e) {
+    const { direction } = e.target.dataset;
+    console.log(direction);
+
+    doScroll(direction);
+}
+
+arrowWrapper.forEach(arrow => {
+    console.log(arrow);
+
+    arrow.addEventListener('click', mouseEnter);
+    arrow.addEventListener('mouseleave', () => {
+        console.log('clear');
+        clearInterval(interval);
+        speed = 0;
+    });
 });
-slider.addEventListener('mouseleave', () => {
-    isDown = false;
-    slider.classList.remove('active');
-});
-slider.addEventListener('mouseup', () => {
-    isDown = false;
-    slider.classList.remove('active');
-});
-slider.addEventListener('mousemove', e => {
-    if (!isDown) return;
-    // stop click insitde in text
-    // e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    // console.log({ x, startX });
-    const walk = (x - startX) * 3;
-    // slider.scrollLeft = scrollLeft - walk;
-});
-// const image = document.querySelector('img');
-// image.addEventListener('click', e => {
-//     console.log('image click');
-// });
