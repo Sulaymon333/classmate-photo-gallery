@@ -14,21 +14,6 @@ const studentsInfo = [{
   },
 
   {
-    firstName: 'Xurxe Toivo',
-    lastName: 'García',
-    title: 'Junior Web Developer',
-    nationality: 'Galician/Spanish',
-    src: 'xurxe.jpg',
-    alt: 'Xurxe Toivo García',
-    skills: ['HTML', 'CSS', 'JS', 'C#', 'R'],
-    whySofterDeveloper: 'I want to create effective and accessible ways to engage with the world.',
-    longTermVision: 'To live a life where we can learn and teach each other as equals.',
-    motivatesMe: 'Science, art, technology, and communities.',
-    favoriteQuote: '“And stepped, not left or right, forward or back, but in another direction entirely” - The Long Mars, by Terry Pratchett and Stephen Baxter',
-    joinedOn: '21.01.2019',
-  },
-
-  {
     firstName: 'Phuc',
     lastName: 'Nguyen',
     title: 'Junior Developer',
@@ -86,6 +71,21 @@ const studentsInfo = [{
     motivatesMe: 'Solution for the problem',
     favoriteQuote: 'Slow and steady win the race',
     joinedOn: '21.01.19'
+  },
+
+  {
+    firstName: 'Xurxe Toivo',
+    lastName: 'García',
+    title: 'Junior Web Developer',
+    nationality: 'Galician/Spanish',
+    src: 'xurxe.jpg',
+    alt: 'Xurxe Toivo García',
+    skills: ['HTML', 'CSS', 'JS', 'C#', 'R'],
+    whySofterDeveloper: 'I want to create effective and accessible ways to engage with the world.',
+    longTermVision: 'To live a life where we can learn and teach each other as equals.',
+    motivatesMe: 'Science, art, technology, and communities.',
+    favoriteQuote: '“And stepped, not left or right, forward or back, but in another direction entirely” - The Long Mars, by Terry Pratchett and Stephen Baxter',
+    joinedOn: '21.01.2019',
   },
 
   {

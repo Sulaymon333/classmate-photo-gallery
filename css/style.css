@@ -24,8 +24,9 @@ body {
 }
 
 .profile-card {
-    flex: 1;
-    width: calc(15%);
+    /* flex: 1; */
+    /* width: calc(15%); */
+    flex: 1 0 calc(17%);
     height: 100%;
     /* margin: 5px; */
     position: relative;
@@ -37,7 +38,8 @@ body {
 }
 
 .profile-card:hover {
-    flex: 4;
+    /* flex: 4; */
+    flex: 4 0 calc(27%);
 }
 
 .profile-card:hover .front-face {
@@ -72,8 +74,25 @@ body {
 
 .front-face {
     transition: filter 0.5s;
-    filter: grayscale(100%);
+    filter: grayscale(80%);
     height: 100%;
     background-size: cover;
     background-position: center;
+}
+
+/* ************ click and drop ************** */
+.class-gallery {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    /* white-space: nowrap; */
+    user-select: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    transform: scale(0.98);
+    will-change: transform;
+}
+
+.profile-card {
+    /* display: inline-flex; */
+    /* flex-wrap: wrap; */
 }
