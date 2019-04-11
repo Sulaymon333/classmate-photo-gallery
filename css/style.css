@@ -87,7 +87,7 @@ body {
     overflow-y: hidden;
     /* white-space: nowrap; */
     user-select: none;
-    cursor: pointer;
+    /* cursor: pointer; */
     transition: all 0.2s;
     /* transform: scale(0.98); */
     /* will-change: transform; */
@@ -106,13 +106,17 @@ body {
 
 .arrow {
     position: absolute;
-    color: red;
+    color: rgb(14, 13, 13);
     font-size: 100px;
     transform: scale(0.5, 1.2);
     width: 200px;
-    visibility: 0.4;
+    opacity: 0.37;
 }
-
+.arrow:hover {
+    opacity: 0.8;
+    color: gold;
+    cursor: pointer;
+}
 .arrow-left {
     left: 0;
     margin-left: -80px;
