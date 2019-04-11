@@ -11,6 +11,7 @@ body {
     /* background-color: lightblue; */
     font-size: 16px;
     line-height: 1.6;
+    background: black;
 }
 
 /* ************ flipping cards & hover ************** */
@@ -26,19 +27,19 @@ body {
 .profile-card {
     /* flex: 1; */
     /* width: calc(15%); */
-    flex: 1 0 calc(150px);
+    flex: 1 0 calc(200px);
     height: 100%;
     /* margin: 5px; */
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
-    transition: transform 0.5s;
-
+    transition: transform 1s;
     /* border: 1px solid black; */
 }
 .profile-card:hover {
     /* flex: 4; */
-    flex: 4 0 calc(300px);
+    flex: 4 0 calc(400px);
+    transition: all 0.9s;
 }
 
 .profile-card:hover .front-face {
@@ -49,7 +50,7 @@ body {
 }
 
 .profile-card:active {
-    transform: scale(0.97);
+    transform: scale(0.75);
     transition: transform 0.2s;
 }
 
