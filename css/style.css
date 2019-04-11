@@ -30,7 +30,7 @@ body {
     /* width: calc(15%); */
     flex: 1 0 calc(200px);
     height: 100%;
-    /* margin: 5px; */
+    margin: -1px;
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
@@ -81,19 +81,62 @@ body {
     background-position: center;
 }
 
-/* ************ click and drop ************** */
+/* ************ hover and drop ************** */
 .class-gallery {
     overflow-x: scroll;
     overflow-y: hidden;
     /* white-space: nowrap; */
     user-select: none;
-    cursor: pointer;
+    /* cursor: pointer; */
     transition: all 0.2s;
-    transform: scale(0.98);
-    will-change: transform;
+    /* transform: scale(0.98); */
+    /* will-change: transform; */
+}
+
+.arrow-wrapper {
+    position: relative;
+    width: 0;
+    /* background-color: greenyellow; */
+    z-index: 1;
+    display: none;
+    align-items: center;
+    top: -100vh;
+    height: 100vh;
+}
+
+.arrow {
+    position: absolute;
+    color: rgb(14, 13, 13);
+    font-size: 100px;
+    transform: scale(0.5, 1.2);
+    width: 200px;
+    opacity: 0.37;
+}
+.arrow:hover {
+    opacity: 0.8;
+    color: gold;
+    cursor: pointer;
+}
+.arrow-left {
+    left: 0;
+    margin-left: -80px;
+    text-align: right;
+}
+
+.arrow-right {
+    left: 100vw;
+    margin-left: -120px;
+    padding-left: 30px;
+    /* left: calc(100vw-200px); */
 }
 
 .profile-card {
     /* display: inline-flex; */
     /* flex-wrap: wrap; */
+}
+
+@media only screen and (min-width: 600px) {
+    .arrow-wrapper {
+        display: flex;
+    }
 }
