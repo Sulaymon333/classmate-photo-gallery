@@ -6,13 +6,14 @@
     box-sizing: border-box;
     outline: none;
 }
+
 body {
     /* background-color: lightblue; */
     font-size: 16px;
     line-height: 1.6;
 }
 
-/* ************ fliping cards & hover ************** */
+/* ************ flipping cards & hover ************** */
 .class-gallery {
     width: 100vw;
     height: 500px;
@@ -21,10 +22,11 @@ body {
     margin: auto;
     perspective: 1000px;
 }
+
 .profile-card {
     /* flex: 1; */
     /* width: calc(15%); */
-    flex: 1 0 calc(20%);
+    flex: 1 0 calc(17%);
     height: 100%;
     /* margin: 5px; */
     position: relative;
@@ -34,23 +36,28 @@ body {
 
     /* border: 1px solid black; */
 }
-.profile-card.flip {
+
+.profile-card:hover {
     /* flex: 4; */
-    flex: 4 0 calc(35%);
+    flex: 4 0 calc(27%);
 }
+
 .profile-card:hover .front-face {
     filter: grayscale(0);
     background-position: top;
     /* background-size: top; */
     background-repeat: no-repeat;
 }
+
 .profile-card:active {
     transform: scale(0.97);
     transition: transform 0.2s;
 }
+
 .profile-card.flip {
     transform: rotateY(180deg);
 }
+
 .front-face,
 .back-face {
     width: 100%;
@@ -58,38 +65,19 @@ body {
     position: absolute;
     backface-visibility: hidden;
 }
+
 .back-face {
     height: 100%;
     background: blue;
     transform: rotateY(180deg);
 }
+
 .front-face {
     transition: filter 0.5s;
     filter: grayscale(80%);
     height: 100%;
     background-size: cover;
     background-position: center;
-}
-.evans {
-    background-image: url('../assets/profile-pictures/evans.jpg');
-}
-.xurxe {
-    background-image: url('../assets/profile-pictures/xurxe.jpg');
-}
-.sherry {
-    background-image: url('../assets/profile-pictures/sherry.jpg');
-}
-.julia {
-    background-image: url('../assets/profile-pictures/julia.jpg');
-}
-.andre {
-    background-image: url('../assets/profile-pictures/andre.jpg');
-}
-.masood {
-    background-image: url('../assets/profile-pictures/masood.jpg');
-}
-.dean {
-    background-image: url('../assets/profile-pictures/dean.jpg');
 }
 
 /* ************ click and drop ************** */
