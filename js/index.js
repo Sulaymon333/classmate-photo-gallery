@@ -34,8 +34,8 @@ const buildProfileCard = (
                 <p class="quote">${favoriteQuote}</p>
                 <h4 class="joined-on">${joinedOn}</h4>
             </div>`;
-    if (i < 5) classGallery.appendChild(profileCard);
-    if (i > 4 && i < 10) classGallery2.appendChild(profileCard);
+    if (i < 8) classGallery.appendChild(profileCard);
+    if (i > 7 && i < 16) classGallery2.appendChild(profileCard);
 };
 
 const renderProfileCard = arr => {
