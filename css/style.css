@@ -26,7 +26,7 @@ body {
 .profile-card {
     /* flex: 1; */
     /* width: calc(15%); */
-    flex: 1 0 calc(17%);
+    flex: 1 0 calc(150px);
     height: 100%;
     /* margin: 5px; */
     position: relative;
@@ -36,10 +36,9 @@ body {
 
     /* border: 1px solid black; */
 }
-
 .profile-card:hover {
     /* flex: 4; */
-    flex: 4 0 calc(27%);
+    flex: 4 0 calc(300px);
 }
 
 .profile-card:hover .front-face {

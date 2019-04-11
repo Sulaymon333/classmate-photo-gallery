@@ -70,6 +70,10 @@ renderProfileCard(studentsInfo)
 const profileCards = document.querySelectorAll('.profile-card');
 
 function flipCard() {
+    console.log(this);
+
+    console.log(this.dataset);
+
     this.classList.toggle('flip');
 }
 profileCards.forEach(profileCard => profileCard.addEventListener('click', flipCard));
@@ -106,7 +110,7 @@ slider.addEventListener('mousemove', e => {
     const x = e.pageX - slider.offsetLeft;
     // console.log({ x, startX });
     const walk = (x - startX) * 3;
-    slider.scrollLeft = scrollLeft - walk;
+    // slider.scrollLeft = scrollLeft - walk;
 });
 // const image = document.querySelector('img');
 // image.addEventListener('click', e => {
