@@ -1,8 +1,8 @@
 // **** Get DOM elements ****
 const classGallery = document.querySelector('.class-gallery');
 
-
-const buildProfileCard = (firstName,
+const buildProfileCard = ({
+    firstName,
     lastName,
     title,
     nationality,
@@ -13,11 +13,11 @@ const buildProfileCard = (firstName,
     motivatesMe,
     longTermVision,
     whySofterDeveloper,
-    skills) => {
+    skills,
+}) => {
     const profileCard = document.createElement('div');
     profileCard.classList.add('profile-card');
-    profileCard.innerHTML =
-        `<div class="front-face" style="background-image: url(../assets/profile-pictures/${src})"></div>
+    profileCard.innerHTML = `<div class="front-face" style="background-image: url(../assets/profile-pictures/${src})"></div>
             <div class="back-face profile-info">
                 <h2 class="name">${firstName} ${lastName}</h2>
                 <h3 class="title">${title}</h3>
@@ -28,44 +28,15 @@ const buildProfileCard = (firstName,
                 <p class="motivation">${motivatesMe}</p>
                 <p class="quote">${favoriteQuote}</p>
                 <h4 class="joined-on">${joinedOn}</h4>
-            </div>`
+            </div>`;
     classGallery.appendChild(profileCard);
-}
+};
 
-const renderProfileCard = (arr) => {
+const renderProfileCard = arr => {
+    arr.forEach(student => buildProfileCard(student));
+};
 
-    arr.forEach(student => {
-        const {
-            firstName,
-            lastName,
-            title,
-            nationality,
-            src,
-            favoriteQuote,
-            alt,
-            joinedOn,
-            motivatesMe,
-            longTermVision,
-            whySofterDeveloper,
-            skills
-        } = student;
-        buildProfileCard(firstName,
-            lastName,
-            title,
-            nationality,
-            src,
-            favoriteQuote,
-            alt,
-            joinedOn,
-            motivatesMe,
-            longTermVision,
-            whySofterDeveloper,
-            skills)
-    });
-}
-
-renderProfileCard(studentsInfo)
-
+renderProfileCard(studentsInfo);
 
 const profileCards = document.querySelectorAll('.profile-card');
 
@@ -83,7 +54,7 @@ function toggleOpen() {
     this.classList.toggle('open');
 }
 
-/* ************ click and drop ************** */
+/* ************ arrow left and right scroll ************** */
 
 const slider = document.querySelector('.class-gallery');
 let isDown = false;
