@@ -1,19 +1,21 @@
 // **** Get DOM elements ****
 const classGallery = document.querySelector('.class-gallery');
 
-
-const buildProfileCard = (firstName,
-    lastName,
-    title,
-    nationality,
-    src,
-    favoriteQuote,
-    alt,
-    joinedOn,
-    motivatesMe,
-    longTermVision,
-    whySofterDeveloper,
-    skills) => {
+const buildProfileCard = (student) => {
+    const {
+        firstName,
+        lastName,
+        title,
+        nationality,
+        src,
+        favoriteQuote,
+        alt,
+        joinedOn,
+        motivatesMe,
+        longTermVision,
+        whySofterDeveloper,
+        skills
+    } = student;
     const profileCard = document.createElement('div');
     profileCard.classList.add('profile-card');
     profileCard.innerHTML =
@@ -35,32 +37,7 @@ const buildProfileCard = (firstName,
 const renderProfileCard = (arr) => {
 
     arr.forEach(student => {
-        const {
-            firstName,
-            lastName,
-            title,
-            nationality,
-            src,
-            favoriteQuote,
-            alt,
-            joinedOn,
-            motivatesMe,
-            longTermVision,
-            whySofterDeveloper,
-            skills
-        } = student;
-        buildProfileCard(firstName,
-            lastName,
-            title,
-            nationality,
-            src,
-            favoriteQuote,
-            alt,
-            joinedOn,
-            motivatesMe,
-            longTermVision,
-            whySofterDeveloper,
-            skills)
+        buildProfileCard(student)
     });
 }
 

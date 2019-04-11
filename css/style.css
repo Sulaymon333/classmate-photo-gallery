@@ -24,17 +24,24 @@ body {
     perspective: 1000px;
 }
 
+.class-gallery {
+    width: 2956px;
+    height: 500px;
+}
+
+
 .profile-card {
     /* flex: 1; */
     /* width: calc(15%); */
     flex: 1 0 calc(200px);
     height: 100%;
-    /* margin: 5px; */
+    margin: -1px;
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform 1s;
     /* border: 1px solid black; */
+
 }
 
 .profile-card:hover {
