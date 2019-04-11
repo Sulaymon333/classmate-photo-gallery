@@ -41,7 +41,7 @@ slider.addEventListener('mousemove', e => {
     const x = e.pageX - slider.offsetLeft;
     // console.log({ x, startX });
     const walk = (x - startX) * 3;
-    slider.scrollLeft = scrollLeft - walk;
+    // slider.scrollLeft = scrollLeft - walk;
 });
 // const image = document.querySelector('img');
 // image.addEventListener('click', e => {
