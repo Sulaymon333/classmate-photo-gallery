@@ -100,8 +100,8 @@ body {
     z-index: 1;
     display: none;
     align-items: center;
-    top: -500px;
-    height: 500px;
+    top: -100vh;
+    height: 100vh;
 }
 
 .arrow {
