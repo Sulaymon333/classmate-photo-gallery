@@ -12,10 +12,10 @@ You can see the live demo of the App here:
 
 ## Authors
 
-Sulaymon Tajudeen [Learn More](https://sulaymontajudeen.com/)
-Adrien Victor
-Steve Phuc
-Garland Rajasalan
+- [Sulaymon Tajudeen](https://github.com/Sulaymon333) - [Learn More](https://sulaymontajudeen.com/)
+- [Adrien Victor](https://github.com/AdrienVictor)
+- [Phuc Nguyen](https://github.com/StevePhuc)
+- [Garland Rajasalan](https://github.com/Rajasalan) 
 
 ## Technologies
 

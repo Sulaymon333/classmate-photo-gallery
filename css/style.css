@@ -36,6 +36,7 @@ body {
     transition: transform 1s;
     /* border: 1px solid black; */
 }
+
 .profile-card:hover {
     /* flex: 4; */
     flex: 4 0 calc(400px);
