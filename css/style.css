@@ -12,13 +12,13 @@ body {
     font-size: 16px;
     line-height: 1.6;
     background: black;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* ************ flipping cards & hover ************** */
 .class-gallery {
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     /* flex-wrap: wrap; */
     margin: auto;
@@ -34,9 +34,10 @@ body {
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
-    transition: transform 0.2s;
+    transition: all 1s;
     /* border: 1px solid black; */
 }
+
 .profile-card:hover {
     /* flex: 4; */
     flex: 4 0 calc(400px);
@@ -52,7 +53,7 @@ body {
 
 .profile-card:active {
     transform: scale(0.95);
-    transition: transform 0.2s;
+    transition: transform 1s;
 }
 
 .profile-card.flip {
@@ -69,8 +70,82 @@ body {
 
 .back-face {
     height: 100%;
-    background: blue;
+    background: #ffb600;
+    border: 1px solid black;
     transform: rotateY(180deg);
+    text-align: center;
+    /* font-weight: 100px; */
+    padding: 15px;
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/*  ***** front info hover ***** */
+
+.front-face-info {
+    margin-top: 100%;
+    padding: 15px;
+    color: #ffb600;
+    /* opacity: 0; */
+    transition: opacity 1s ease-out;
+    background: rgba(37, 37, 37, 0.6);
+    font-size: 1.2rem;
+}
+.front-face-info h3 {
+    color: white;
+}
+.profile-card:hover .front-face-info {
+    opacity: 1;
+    transition: opacity 1s ease-in;
+}
+
+/* **** back face info **** */
+.back-face .name,
+.nationality,
+.span-nationality {
+    display: none;
+}
+.back-face h2 {
+    margin-top: 5px;
+}
+
+.back-face,
+.nationality,
+.skills,
+.why-developer,
+.vision,
+.motivation,
+.quote,
+.joined-on {
+    font-size: 15px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.back-face .title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* .back-face .nationality {
+    font-weight: normal;
+    font-size: 15px;
+    margin-bottom: 10px;
+} */
+
+.back-face span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.back-face .skills {
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.back-face .skills span {
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .front-face {
@@ -79,19 +154,6 @@ body {
     height: 100%;
     background-size: cover;
     background-position: center;
-}
-
-/*  ***** front info hover ***** */
-
-.front-face-info {
-    color: #ffb600;
-    /* opacity: 0; */
-    transition: opacity 1s ease-out;
-    background: rgba(37, 37, 37, 0.534);
-}
-.profile-card:hover .front-face-info {
-    opacity: 1;
-    transition: opacity 1s ease-in;
 }
 
 /* ************ hover and drop ************** */
@@ -127,7 +189,7 @@ body {
 }
 .arrow:hover {
     opacity: 0.8;
-    color: gold;
+    color: #ffb600;
     cursor: pointer;
 }
 .arrow-left {

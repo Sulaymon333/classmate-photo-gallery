@@ -1,5 +1,5 @@
 // **** Get DOM elements ****
-const classGallery = document.querySelector('.class-gallery');
+let classGallery = document.querySelector('.class-gallery');
 let showInfo;
 
 const buildProfileCard = ({
@@ -18,18 +18,22 @@ const buildProfileCard = ({
 }) => {
     const profileCard = document.createElement('div');
     profileCard.classList.add('profile-card');
-    profileCard.innerHTML = `<div class="front-face" style="background-image: url(../assets/profile-pictures/${src})"></div>
+    profileCard.innerHTML = `<div class="front-face" style="background-image: url(./assets/profile-pictures/${src})"></div>
             <div class="back-face profile-info">
                 <h2 class="name">${firstName} ${lastName}</h2>
                 <h3 class="title">${title}</h3>
+                <span class="span-nationality">Nationality</span>
                 <h3 class="nationality">${nationality}</h3>
-                <h3 class="skills">${skills.join(', ')}</h3>
-                <p class="why-developer">${whySofterDeveloper}</p>
-                <p class="vision">${longTermVision}</p>
-                <p class="motivation">${motivatesMe}</p>
-                <p class="quote">${favoriteQuote}</p>
-                <h4 class="joined-on">${joinedOn}</h4>
+                <h3 class="skills"><span>Skills</span></br>${skills.join(
+                    ', '
+                )}</h3>
+                <p class="why-developer"><span>Why-developer</span></br>${whySofterDeveloper}</p>
+                <p class="vision"><span>Vision</span></br>${longTermVision}</p>
+                <p class="motivation"><span>Motivation</span></br>${motivatesMe}</p>
+                <p class="quote"><span>Quote</span></br>${favoriteQuote}</p>
+                <h4 class="joined-on"><span>Joined-On</span></br>${joinedOn}</h4>
             </div>`;
+
     classGallery.appendChild(profileCard);
 };
 
@@ -45,7 +49,11 @@ const frontFaces = document.querySelectorAll('.front-face');
 // ***** Flip card funtion *****
 
 function flipCard() {
-    console.log(this.dataset);
+    console.log(this);
+
+    profileCards.forEach(card => {
+        if (card != this) card.classList.remove('flip');
+    });
     this.classList.toggle('flip');
 }
 profileCards.forEach(profileCard =>
@@ -53,8 +61,6 @@ profileCards.forEach(profileCard =>
 );
 // ***** hover function ****
 function onMouseEnter() {
-    console.log(this);
-
     let that = this;
     // setTimeout(function run() {
     frontFaces.forEach(front => (front.innerHTML = ''));
@@ -92,6 +98,8 @@ let interval;
 let speed = 0;
 // doScroll('right');
 function doScroll(direction) {
+    // console.log(speed);
+
     clearInterval(interval);
     interval = setInterval(function run() {
         if (direction === 'right') {
@@ -106,6 +114,7 @@ function doScroll(direction) {
 
 function mouseEnter(e) {
     const { direction } = e.target.dataset;
+    // console.log(direction);
 
     doScroll(direction);
 }
@@ -113,7 +122,22 @@ function mouseEnter(e) {
 arrowWrapper.forEach(arrow => {
     arrow.addEventListener('click', mouseEnter);
     arrow.addEventListener('mouseleave', () => {
+        // console.log('clear');
         clearInterval(interval);
         speed = 0;
     });
 });
+
+/* ************  infinity scroll ************** */
+let maxScrollLeft = classGallery.scrollWidth - classGallery.clientWidth;
+function scrollRun() {
+    // console.log(maxScrollLeft);
+    // console.log(classGallery.scrollLeft);
+    if (maxScrollLeft == classGallery.scrollLeft) {
+        renderProfileCard(studentsInfo);
+        classGallery = document.querySelector('.class-gallery');
+        maxScrollLeft = classGallery.scrollWidth - classGallery.clientWidth;
+    }
+}
+
+classGallery.addEventListener('scroll', scrollRun);
