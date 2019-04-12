@@ -102,8 +102,8 @@ arrowWrapper.forEach(arrow => {
 /* ************  infinity scroll ************** */
 let maxScrollLeft = classGallery.scrollWidth - classGallery.clientWidth;
 function scrollRun() {
-    console.log(maxScrollLeft);
-    console.log(classGallery.scrollLeft);
+    // console.log(maxScrollLeft);
+    // console.log(classGallery.scrollLeft);
     if (maxScrollLeft == classGallery.scrollLeft) {
         renderProfileCard(studentsInfo);
         classGallery = document.querySelector('.class-gallery');
