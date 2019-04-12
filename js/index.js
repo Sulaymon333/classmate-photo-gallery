@@ -22,9 +22,11 @@ const buildProfileCard = ({
             <div class="back-face profile-info">
                 <h2 class="name">${firstName} ${lastName}</h2>
                 <h3 class="title">${title}</h3>
- 
-                <h3 class="nationality"><span> Nationality</span></br>${nationality}</h3>
-                <h3 class="skills"><span>Skills</span></br>${skills.join(', ')}</h3>
+                <span class="span-nationality">Nationality</span>
+                <h3 class="nationality">${nationality}</h3>
+                <h3 class="skills"><span>Skills</span></br>${skills.join(
+                    ', '
+                )}</h3>
                 <p class="why-developer"><span>Why-developer</span></br>${whySofterDeveloper}</p>
                 <p class="vision"><span>Vision</span></br>${longTermVision}</p>
                 <p class="motivation"><span>Motivation</span></br>${motivatesMe}</p>
@@ -47,18 +49,47 @@ const frontFaces = document.querySelectorAll('.front-face');
 // ***** Flip card funtion *****
 
 function flipCard() {
-    console.log(this.dataset);
-    this.classList.toggle('flip');
-}
-profileCards.forEach(profileCard => profileCard.addEventListener('click', flipCard));
-// ***** hover function ****
-function onMouseEnter() {
     console.log(this);
 
-    frontFaces.forEach(front => (front.innerHTML = ''));
-    this.querySelector('.front-face').innerHTML = this.querySelector('.back-face h2').textContent;
+    profileCards.forEach(card => {
+        if (card != this) card.classList.remove('flip');
+    });
+    this.classList.toggle('flip');
 }
-profileCards.forEach(profileCard => profileCard.addEventListener('mouseenter', onMouseEnter));
+profileCards.forEach(profileCard =>
+    profileCard.addEventListener('click', flipCard)
+);
+// ***** hover function ****
+function onMouseEnter() {
+    let that = this;
+    // setTimeout(function run() {
+    frontFaces.forEach(front => (front.innerHTML = ''));
+    content = `<div class="front-face-info">
+        <h2>${that.querySelector('.name').textContent}</h2>
+        <h3>${that.querySelector('.nationality').textContent}</h3>
+        </div>`;
+    that.querySelector('.front-face').innerHTML = content;
+
+    let frontFaceInfo = document.querySelector('.front-face-info');
+    frontFaceInfo.style.opacity = 0;
+
+    setInterval(function() {
+        if (frontFaceInfo.style.opacity < 1) {
+            frontFaceInfo.style.opacity -= 0.005 * -1;
+        } else {
+            clearInterval();
+        }
+    }, 1);
+    // }, 500);
+}
+profileCards.forEach(profileCard =>
+    profileCard.addEventListener('mouseenter', onMouseEnter)
+);
+profileCards.forEach(profileCard =>
+    profileCard.addEventListener('mouseleave', () => {
+        frontFaces.forEach(front => (front.innerHTML = ''));
+    })
+);
 
 /* ************ arrow left and right scroll ************** */
 
@@ -89,8 +120,6 @@ function mouseEnter(e) {
 }
 
 arrowWrapper.forEach(arrow => {
-    console.log(arrow);
-
     arrow.addEventListener('click', mouseEnter);
     arrow.addEventListener('mouseleave', () => {
         // console.log('clear');
