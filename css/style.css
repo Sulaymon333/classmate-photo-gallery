@@ -85,14 +85,13 @@ body {
 
 .front-face-info {
     color: #ffb600;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+    /* opacity: 0; */
+    transition: opacity 1s ease-out;
+    background: rgba(37, 37, 37, 0.534);
 }
 .profile-card:hover .front-face-info {
     opacity: 1;
-    transition: opacity 1s ease-in-out;
-
-    background: rgba(37, 37, 37, 0.534);
+    transition: opacity 1s ease-in;
 }
 
 /* ************ hover and drop ************** */

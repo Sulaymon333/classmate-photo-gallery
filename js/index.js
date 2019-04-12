@@ -57,8 +57,7 @@ function onMouseEnter() {
 
     let that = this;
     // setTimeout(function run() {
-    // frontFaces.forEach(front => (front.innerHTML = ''));
-    console.log(that);
+    frontFaces.forEach(front => (front.innerHTML = ''));
     content = `<div class="front-face-info">
         <h2>${that.querySelector('.name').textContent}</h2>
         <h3>${that.querySelector('.nationality').textContent}</h3>
@@ -69,18 +68,21 @@ function onMouseEnter() {
     frontFaceInfo.style.opacity = 0;
 
     setInterval(function() {
-        console.log(frontFaceInfo.style.opacity);
-
         if (frontFaceInfo.style.opacity < 1) {
-            frontFaceInfo.style.opacity -= 0.05 * -1;
+            frontFaceInfo.style.opacity -= 0.005 * -1;
         } else {
             clearInterval();
         }
-    }, 50);
+    }, 1);
     // }, 500);
 }
 profileCards.forEach(profileCard =>
     profileCard.addEventListener('mouseenter', onMouseEnter)
+);
+profileCards.forEach(profileCard =>
+    profileCard.addEventListener('mouseleave', () => {
+        frontFaces.forEach(front => (front.innerHTML = ''));
+    })
 );
 
 /* ************ arrow left and right scroll ************** */
