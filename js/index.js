@@ -1,5 +1,5 @@
 // **** Get DOM elements ****
-const classGallery = document.querySelector('.class-gallery');
+let classGallery = document.querySelector('.class-gallery');
 let showInfo;
 
 const buildProfileCard = ({
@@ -37,6 +37,7 @@ const buildProfileCard = ({
 
 const renderProfileCard = arr => {
     arr.forEach(student => buildProfileCard(student));
+    console.log('run profiilce');
 };
 
 renderProfileCard(studentsInfo);
@@ -53,7 +54,7 @@ function flipCard() {
 profileCards.forEach(profileCard => profileCard.addEventListener('click', flipCard));
 // ***** hover function ****
 function onMouseEnter() {
-    console.log(this);
+    // console.log(this);
 
     frontFaces.forEach(front => (front.innerHTML = ''));
     this.querySelector('.front-face').innerHTML = this.querySelector('.back-face h2').textContent;
@@ -67,7 +68,7 @@ let interval;
 let speed = 0;
 // doScroll('right');
 function doScroll(direction) {
-    console.log(speed);
+    // console.log(speed);
 
     clearInterval(interval);
     interval = setInterval(function run() {
@@ -83,7 +84,7 @@ function doScroll(direction) {
 
 function mouseEnter(e) {
     const { direction } = e.target.dataset;
-    console.log(direction);
+    // console.log(direction);
 
     doScroll(direction);
 }
@@ -93,8 +94,22 @@ arrowWrapper.forEach(arrow => {
 
     arrow.addEventListener('click', mouseEnter);
     arrow.addEventListener('mouseleave', () => {
-        console.log('clear');
+        // console.log('clear');
         clearInterval(interval);
         speed = 0;
     });
 });
+
+/* ************  infinity scroll ************** */
+let maxScrollLeft = classGallery.scrollWidth - classGallery.clientWidth;
+function scrollRun() {
+    console.log(maxScrollLeft);
+    console.log(classGallery.scrollLeft);
+    if (maxScrollLeft == classGallery.scrollLeft) {
+        renderProfileCard(studentsInfo);
+        classGallery = document.querySelector('.class-gallery');
+        maxScrollLeft = classGallery.scrollWidth - classGallery.clientWidth;
+    }
+}
+
+classGallery.addEventListener('scroll', scrollRun);
