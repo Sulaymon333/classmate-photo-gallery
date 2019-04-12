@@ -47,7 +47,7 @@ const studentsInfo = [
     {
         firstName: 'Adrien',
         lastName: 'Fernandez',
-        title: 'Mr',
+        title: 'Junior developer',
         nationality: 'French',
         src: 'adrien.jpg',
         alt: 'Adrien Victor Fernandez',
@@ -183,7 +183,7 @@ const studentsInfo = [
     {
         firstName: ' Koray ',
         lastName: 'Dündar',
-        title: 'Mr',
+        title: 'Junior developer',
         nationality: 'Turkish',
         src: 'koray.jpg',
         alt: '',
@@ -244,7 +244,7 @@ const studentsInfo = [
     {
         firstName: 'Muhammad Husham',
         lastName: 'Yousaf',
-        title: 'Mr.',
+        title: 'Junior developer.',
         nationality: 'Pakistani',
         src: 'Husham.jpg',
         alt: '',
