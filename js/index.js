@@ -24,9 +24,7 @@ const buildProfileCard = ({
                 <h3 class="title">${title}</h3>
  
                 <h3 class="nationality"><span> Nationality</span></br>${nationality}</h3>
-                <h3 class="skills"><span>Skills</span></br>${skills.join(
-                    ', '
-                )}</h3>
+                <h3 class="skills"><span>Skills</span></br>${skills.join(', ')}</h3>
                 <p class="why-developer"><span>Why-developer</span></br>${whySofterDeveloper}</p>
                 <p class="vision"><span>Vision</span></br>${longTermVision}</p>
                 <p class="motivation"><span>Motivation</span></br>${motivatesMe}</p>
@@ -52,21 +50,15 @@ function flipCard() {
     console.log(this.dataset);
     this.classList.toggle('flip');
 }
-profileCards.forEach(profileCard =>
-    profileCard.addEventListener('click', flipCard)
-);
+profileCards.forEach(profileCard => profileCard.addEventListener('click', flipCard));
 // ***** hover function ****
 function onMouseEnter() {
     console.log(this);
 
     frontFaces.forEach(front => (front.innerHTML = ''));
-    this.querySelector('.front-face').innerHTML = this.querySelector(
-        '.back-face h2'
-    ).textContent;
+    this.querySelector('.front-face').innerHTML = this.querySelector('.back-face h2').textContent;
 }
-profileCards.forEach(profileCard =>
-    profileCard.addEventListener('mouseenter', onMouseEnter)
-);
+profileCards.forEach(profileCard => profileCard.addEventListener('mouseenter', onMouseEnter));
 
 /* ************ arrow left and right scroll ************** */
 
