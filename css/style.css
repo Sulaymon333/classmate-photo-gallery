@@ -12,12 +12,13 @@ body {
     font-size: 16px;
     line-height: 1.6;
     background: black;
+    overflow: hidden;
 }
 
 /* ************ flipping cards & hover ************** */
 .class-gallery {
     width: 100vw;
-    height: 500px;
+    height: 100vh;
     display: flex;
     /* flex-wrap: wrap; */
     margin: auto;
@@ -39,7 +40,7 @@ body {
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
-    transition: transform 1s;
+    transition: transform 0.2s;
     /* border: 1px solid black; */
 
 }
@@ -47,7 +48,7 @@ body {
 .profile-card:hover {
     /* flex: 4; */
     flex: 4 0 calc(400px);
-    transition: all 0.9s;
+    transition: all 0.7s ease-in 0.4s;
 }
 
 .profile-card:hover .front-face {

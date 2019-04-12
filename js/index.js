@@ -1,5 +1,6 @@
 // **** Get DOM elements ****
 const classGallery = document.querySelector('.class-gallery');
+let showInfo;
 
 const buildProfileCard = (student) => {
     const {
@@ -18,8 +19,7 @@ const buildProfileCard = (student) => {
     } = student;
     const profileCard = document.createElement('div');
     profileCard.classList.add('profile-card');
-    profileCard.innerHTML =
-        `<div class="front-face" style="background-image: url(../assets/profile-pictures/${src})"></div>
+    profileCard.innerHTML = `<div class="front-face" style="background-image: url(../assets/profile-pictures/${src})"></div>
             <div class="back-face profile-info">
                 <h2 class="name">${firstName} ${lastName}</h2>
                 <h3 class="title">${title}</h3>
@@ -30,35 +30,42 @@ const buildProfileCard = (student) => {
                 <p class="motivation">${motivatesMe}</p>
                 <p class="quote">${favoriteQuote}</p>
                 <h4 class="joined-on">${joinedOn}</h4>
-            </div>`
+            </div>`;
     classGallery.appendChild(profileCard);
-}
+};
 
-const renderProfileCard = (arr) => {
-
+const renderProfileCard = arr => {
     arr.forEach(student => {
         buildProfileCard(student)
     });
-}
+};
 
-renderProfileCard(studentsInfo)
-
+renderProfileCard(studentsInfo);
 
 const profileCards = document.querySelectorAll('.profile-card');
+const frontFaces = document.querySelectorAll('.front-face');
+
+// ***** Flip card funtion *****
 
 function flipCard() {
-    console.log(this);
-
     console.log(this.dataset);
-
     this.classList.toggle('flip');
 }
-profileCards.forEach(profileCard => profileCard.addEventListener('click', flipCard));
+profileCards.forEach(profileCard =>
+    profileCard.addEventListener('click', flipCard)
+);
 // ***** hover function ****
-function toggleOpen() {
-    console.log('Hello');
-    this.classList.toggle('open');
+function onMouseEnter() {
+    console.log(this);
+
+    frontFaces.forEach(front => (front.innerHTML = ''));
+    this.querySelector('.front-face').innerHTML = this.querySelector(
+        '.back-face h2'
+    ).textContent;
 }
+profileCards.forEach(profileCard =>
+    profileCard.addEventListener('mouseenter', onMouseEnter)
+);
 
 /* ************ click and drop ************** */
 
