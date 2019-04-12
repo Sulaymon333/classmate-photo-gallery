@@ -27,11 +27,11 @@ const buildProfileCard = ({
                 <h3 class="skills"><span>Skills</span></br>${skills.join(
                     ', '
                 )}</h3>
-                <p class="why-developer"><span>Why-developer</span></br>${whySofterDeveloper}</p>
-                <p class="vision"><span>Vision</span></br>${longTermVision}</p>
-                <p class="motivation"><span>Motivation</span></br>${motivatesMe}</p>
-                <p class="quote"><span>Quote</span></br>${favoriteQuote}</p>
-                <h4 class="joined-on"><span>Joined-On</span></br>${joinedOn}</h4>
+                <p class="why-developer"><span>Why developer:</span></br>${whySofterDeveloper}</p>
+                <p class="vision"><span>Vision:</span></br>${longTermVision}</p>
+                <p class="motivation"><span>Motivation:</span></br>${motivatesMe}</p>
+                <p class="quote"><span>Quote:</span></br>${favoriteQuote}</p>
+                <h4 class="joined-on"><span>Joined On:</span></br>${joinedOn}</h4>
             </div>`;
 
     classGallery.appendChild(profileCard);
@@ -59,6 +59,9 @@ function flipCard() {
 profileCards.forEach(profileCard =>
     profileCard.addEventListener('click', flipCard)
 );
+profileCards.forEach(card =>
+    card.addEventListener('mouseleave', () => card.classList.remove('flip'))
+);
 // ***** hover function ****
 function onMouseEnter() {
     let that = this;
@@ -66,7 +69,8 @@ function onMouseEnter() {
     frontFaces.forEach(front => (front.innerHTML = ''));
     content = `<div class="front-face-info">
         <h2>${that.querySelector('.name').textContent}</h2>
-        <h3>${that.querySelector('.nationality').textContent}</h3>
+        <h5>${that.querySelector('.title').textContent}</h3>
+        <h4>${that.querySelector('.nationality').textContent}</h3>
         </div>`;
     that.querySelector('.front-face').innerHTML = content;
 
