@@ -8,7 +8,7 @@ You can see the live demo of the App here:
 
 [(https://integrify-class2019.github.io/classmate-photo-gallery/)](https://integrify-class2019.github.io/classmate-photo-gallery/)
 
-# <p align="center"><img src="assets/demo.png"/></p>
+# <p align="center"><img src="assets/demo.jpg"/></p>
 
 ## Authors
 
