@@ -14,7 +14,7 @@ const buildProfileCard = ({
     motivatesMe,
     longTermVision,
     whySofterDeveloper,
-    skills
+    skills,
 }) => {
     const profileCard = document.createElement('div');
     profileCard.classList.add('profile-card');
@@ -24,9 +24,7 @@ const buildProfileCard = ({
                 <h3 class="title">${title}</h3>
                 <span class="span-nationality">Nationality</span>
                 <h3 class="nationality">${nationality}</h3>
-                <h3 class="skills"><span>Skills</span></br>${skills.join(
-                    ', '
-                )}</h3>
+                <h3 class="skills"><span>Skills</span></br>${skills.join(', ')}</h3>
                 <p class="why-developer"><span>Why-developer</span></br>${whySofterDeveloper}</p>
                 <p class="vision"><span>Vision</span></br>${longTermVision}</p>
                 <p class="motivation"><span>Motivation</span></br>${motivatesMe}</p>
@@ -43,8 +41,8 @@ const renderProfileCard = arr => {
 
 renderProfileCard(studentsInfo);
 
-const profileCards = document.querySelectorAll('.profile-card');
-const frontFaces = document.querySelectorAll('.front-face');
+let profileCards = document.querySelectorAll('.profile-card');
+let frontFaces = document.querySelectorAll('.front-face');
 
 // ***** Flip card funtion *****
 
@@ -56,12 +54,10 @@ function flipCard() {
     });
     this.classList.toggle('flip');
 }
-profileCards.forEach(profileCard =>
-    profileCard.addEventListener('click', flipCard)
-);
+profileCards.forEach(profileCard => profileCard.addEventListener('click', flipCard));
 // ***** hover function ****
 function onMouseEnter() {
-    let that = this;
+    const that = this;
     // setTimeout(function run() {
     frontFaces.forEach(front => (front.innerHTML = ''));
     content = `<div class="front-face-info">
@@ -70,7 +66,7 @@ function onMouseEnter() {
         </div>`;
     that.querySelector('.front-face').innerHTML = content;
 
-    let frontFaceInfo = document.querySelector('.front-face-info');
+    const frontFaceInfo = document.querySelector('.front-face-info');
     frontFaceInfo.style.opacity = 0;
 
     setInterval(function() {
@@ -82,9 +78,7 @@ function onMouseEnter() {
     }, 1);
     // }, 500);
 }
-profileCards.forEach(profileCard =>
-    profileCard.addEventListener('mouseenter', onMouseEnter)
-);
+profileCards.forEach(profileCard => profileCard.addEventListener('mouseenter', onMouseEnter));
 profileCards.forEach(profileCard =>
     profileCard.addEventListener('mouseleave', () => {
         frontFaces.forEach(front => (front.innerHTML = ''));
@@ -137,6 +131,17 @@ function scrollRun() {
         renderProfileCard(studentsInfo);
         classGallery = document.querySelector('.class-gallery');
         maxScrollLeft = classGallery.scrollWidth - classGallery.clientWidth;
+
+        // add event
+        profileCards = document.querySelectorAll('.profile-card');
+        frontFaces = document.querySelectorAll('.front-face');
+        profileCards.forEach(profileCard => profileCard.addEventListener('click', flipCard));
+        profileCards.forEach(profileCard => profileCard.addEventListener('mouseenter', onMouseEnter));
+        profileCards.forEach(profileCard =>
+            profileCard.addEventListener('mouseleave', () => {
+                frontFaces.forEach(front => (front.innerHTML = ''));
+            })
+        );
     }
 }
 
