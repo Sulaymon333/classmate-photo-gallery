@@ -74,7 +74,8 @@ body {
     transform: rotateY(180deg);
     text-align: center;
     font-weight: 100px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .back-face h2 {
@@ -100,7 +101,7 @@ body {
     margin-bottom: 10px;
 }
 
-.back-face  span {
+.back-face span {
     font-weight: bold;
     font-size: 25px;
 }
@@ -175,7 +176,6 @@ body {
 .profile-card {
     /* display: inline-flex; */
     /* flex-wrap: wrap; */
- 
 }
 
 @media only screen and (min-width: 600px) {
@@ -183,4 +183,3 @@ body {
         display: flex;
     }
 }
- 

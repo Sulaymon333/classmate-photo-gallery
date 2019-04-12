@@ -14,7 +14,7 @@ const buildProfileCard = ({
     motivatesMe,
     longTermVision,
     whySofterDeveloper,
-    skills,
+    skills
 }) => {
     const profileCard = document.createElement('div');
     profileCard.classList.add('profile-card');
