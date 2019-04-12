@@ -14,7 +14,7 @@ const buildProfileCard = ({
     motivatesMe,
     longTermVision,
     whySofterDeveloper,
-    skills,
+    skills
 }) => {
     const profileCard = document.createElement('div');
     profileCard.classList.add('profile-card');
@@ -48,35 +48,40 @@ function flipCard() {
     console.log(this.dataset);
     this.classList.toggle('flip');
 }
-<<<<<<< HEAD
 profileCards.forEach(profileCard =>
     profileCard.addEventListener('click', flipCard)
 );
-
-=======
-profileCards.forEach(profileCard => profileCard.addEventListener('click', flipCard));
->>>>>>> 4c49b5803249a6f59cc340a083393802f853453f
 // ***** hover function ****
 function onMouseEnter() {
     console.log(this);
 
-<<<<<<< HEAD
     let that = this;
-    setTimeout(function run() {
-        console.log(that);
-        frontFaces.forEach(front => (front.innerHTML = ''));
-        content = `<div class="front-face-info">
+    // setTimeout(function run() {
+    // frontFaces.forEach(front => (front.innerHTML = ''));
+    console.log(that);
+    content = `<div class="front-face-info">
         <h2>${that.querySelector('.name').textContent}</h2>
         <h3>${that.querySelector('.nationality').textContent}</h3>
         </div>`;
-        that.querySelector('.front-face').innerHTML = content;
-    }, 500);
-=======
-    frontFaces.forEach(front => (front.innerHTML = ''));
-    this.querySelector('.front-face').innerHTML = this.querySelector('.back-face h2').textContent;
->>>>>>> 4c49b5803249a6f59cc340a083393802f853453f
+    that.querySelector('.front-face').innerHTML = content;
+
+    let frontFaceInfo = document.querySelector('.front-face-info');
+    frontFaceInfo.style.opacity = 0;
+
+    setInterval(function() {
+        console.log(frontFaceInfo.style.opacity);
+
+        if (frontFaceInfo.style.opacity < 1) {
+            frontFaceInfo.style.opacity -= 0.05 * -1;
+        } else {
+            clearInterval();
+        }
+    }, 50);
+    // }, 500);
 }
-profileCards.forEach(profileCard => profileCard.addEventListener('mouseenter', onMouseEnter));
+profileCards.forEach(profileCard =>
+    profileCard.addEventListener('mouseenter', onMouseEnter)
+);
 
 /* ************ arrow left and right scroll ************** */
 
@@ -85,8 +90,6 @@ let interval;
 let speed = 0;
 // doScroll('right');
 function doScroll(direction) {
-    console.log(speed);
-
     clearInterval(interval);
     interval = setInterval(function run() {
         if (direction === 'right') {
@@ -101,17 +104,13 @@ function doScroll(direction) {
 
 function mouseEnter(e) {
     const { direction } = e.target.dataset;
-    console.log(direction);
 
     doScroll(direction);
 }
 
 arrowWrapper.forEach(arrow => {
-    console.log(arrow);
-
     arrow.addEventListener('click', mouseEnter);
     arrow.addEventListener('mouseleave', () => {
-        console.log('clear');
         clearInterval(interval);
         speed = 0;
     });

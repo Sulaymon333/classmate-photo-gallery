@@ -81,6 +81,20 @@ body {
     background-position: center;
 }
 
+/*  ***** front info hover ***** */
+
+.front-face-info {
+    color: #ffb600;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.profile-card:hover .front-face-info {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+
+    background: rgba(37, 37, 37, 0.534);
+}
+
 /* ************ hover and drop ************** */
 .class-gallery {
     overflow-x: scroll;
