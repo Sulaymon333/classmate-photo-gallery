@@ -8,13 +8,21 @@
 }
 
 body {
-    /* background-color: lightblue; */
     font-size: 16px;
     line-height: 1.6;
-    background: black;
+    background: white;
     overflow: hidden;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Dosis', sans-serif;
 }
-
+.logo {
+    background: rgba(196, 195, 195, 0.651);
+    width: 100%;
+    text-align: center;
+    margin-top: 200px;
+}
 /* ************ flipping cards & hover ************** */
 .class-gallery {
     width: 100vw;
@@ -74,8 +82,6 @@ body {
     transform: rotateY(180deg);
     text-align: center;
     font-weight: 100px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .back-face h2 {
