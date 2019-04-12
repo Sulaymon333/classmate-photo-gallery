@@ -14,7 +14,7 @@ const buildProfileCard = ({
     motivatesMe,
     longTermVision,
     whySofterDeveloper,
-    skills,
+    skills
 }) => {
     const profileCard = document.createElement('div');
     profileCard.classList.add('profile-card');
@@ -24,12 +24,14 @@ const buildProfileCard = ({
                 <h3 class="title">${title}</h3>
                 <span class="span-nationality">Nationality</span>
                 <h3 class="nationality">${nationality}</h3>
-                <h3 class="skills"><span>Skills</span></br>${skills.join(', ')}</h3>
-                <p class="why-developer"><span>Why-developer</span></br>${whySofterDeveloper}</p>
-                <p class="vision"><span>Vision</span></br>${longTermVision}</p>
-                <p class="motivation"><span>Motivation</span></br>${motivatesMe}</p>
-                <p class="quote"><span>Quote</span></br>${favoriteQuote}</p>
-                <h4 class="joined-on"><span>Joined-On</span></br>${joinedOn}</h4>
+                <h3 class="skills"><span>Skills</span></br>${skills.join(
+                    ', '
+                )}</h3>
+                <p class="why-developer"><span>Why developer:</span></br>${whySofterDeveloper}</p>
+                <p class="vision"><span>Vision:</span></br>${longTermVision}</p>
+                <p class="motivation"><span>Motivation:</span></br>${motivatesMe}</p>
+                <p class="quote"><span>Quote:</span></br>${favoriteQuote}</p>
+                <h4 class="joined-on"><span>Joined On:</span></br>${joinedOn}</h4>
             </div>`;
 
     classGallery.appendChild(profileCard);
@@ -54,7 +56,12 @@ function flipCard() {
     });
     this.classList.toggle('flip');
 }
-profileCards.forEach(profileCard => profileCard.addEventListener('click', flipCard));
+profileCards.forEach(profileCard =>
+    profileCard.addEventListener('click', flipCard)
+);
+profileCards.forEach(card =>
+    card.addEventListener('mouseleave', () => card.classList.remove('flip'))
+);
 // ***** hover function ****
 function onMouseEnter() {
     const that = this;
@@ -62,7 +69,8 @@ function onMouseEnter() {
     frontFaces.forEach(front => (front.innerHTML = ''));
     content = `<div class="front-face-info">
         <h2>${that.querySelector('.name').textContent}</h2>
-        <h3>${that.querySelector('.nationality').textContent}</h3>
+        <h5>${that.querySelector('.title').textContent}</h3>
+        <h4>${that.querySelector('.nationality').textContent}</h3>
         </div>`;
     that.querySelector('.front-face').innerHTML = content;
 
@@ -78,7 +86,9 @@ function onMouseEnter() {
     }, 1);
     // }, 500);
 }
-profileCards.forEach(profileCard => profileCard.addEventListener('mouseenter', onMouseEnter));
+profileCards.forEach(profileCard =>
+    profileCard.addEventListener('mouseenter', onMouseEnter)
+);
 profileCards.forEach(profileCard =>
     profileCard.addEventListener('mouseleave', () => {
         frontFaces.forEach(front => (front.innerHTML = ''));
@@ -135,8 +145,12 @@ function scrollRun() {
         // add event
         profileCards = document.querySelectorAll('.profile-card');
         frontFaces = document.querySelectorAll('.front-face');
-        profileCards.forEach(profileCard => profileCard.addEventListener('click', flipCard));
-        profileCards.forEach(profileCard => profileCard.addEventListener('mouseenter', onMouseEnter));
+        profileCards.forEach(profileCard =>
+            profileCard.addEventListener('click', flipCard)
+        );
+        profileCards.forEach(profileCard =>
+            profileCard.addEventListener('mouseenter', onMouseEnter)
+        );
         profileCards.forEach(profileCard =>
             profileCard.addEventListener('mouseleave', () => {
                 frontFaces.forEach(front => (front.innerHTML = ''));
