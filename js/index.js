@@ -1,5 +1,5 @@
 // **** Get DOM elements ****
-const classGallery = document.querySelector('.class-gallery');
+let classGallery = document.querySelector('.class-gallery');
 let showInfo;
 
 const buildProfileCard = ({
@@ -18,7 +18,7 @@ const buildProfileCard = ({
 }) => {
     const profileCard = document.createElement('div');
     profileCard.classList.add('profile-card');
-    profileCard.innerHTML = `<div class="front-face" style="background-image: url(../assets/profile-pictures/${src})"></div>
+    profileCard.innerHTML = `<div class="front-face" style="background-image: url(./assets/profile-pictures/${src})"></div>
             <div class="back-face profile-info">
                 <h2 class="name">${firstName} ${lastName}</h2>
                 <h3 class="title">${title}</h3>
@@ -30,8 +30,8 @@ const buildProfileCard = ({
                 <p class="motivation"><span>Motivation</span></br>${motivatesMe}</p>
                 <p class="quote"><span>Quote</span></br>${favoriteQuote}</p>
                 <h4 class="joined-on"><span>Joined-On</span></br>${joinedOn}</h4>
-            </div>`
- 
+            </div>`;
+
     classGallery.appendChild(profileCard);
 };
 
@@ -67,7 +67,7 @@ let interval;
 let speed = 0;
 // doScroll('right');
 function doScroll(direction) {
-    console.log(speed);
+    // console.log(speed);
 
     clearInterval(interval);
     interval = setInterval(function run() {
@@ -83,7 +83,7 @@ function doScroll(direction) {
 
 function mouseEnter(e) {
     const { direction } = e.target.dataset;
-    console.log(direction);
+    // console.log(direction);
 
     doScroll(direction);
 }
@@ -93,8 +93,22 @@ arrowWrapper.forEach(arrow => {
 
     arrow.addEventListener('click', mouseEnter);
     arrow.addEventListener('mouseleave', () => {
-        console.log('clear');
+        // console.log('clear');
         clearInterval(interval);
         speed = 0;
     });
 });
+
+/* ************  infinity scroll ************** */
+let maxScrollLeft = classGallery.scrollWidth - classGallery.clientWidth;
+function scrollRun() {
+    console.log(maxScrollLeft);
+    console.log(classGallery.scrollLeft);
+    if (maxScrollLeft == classGallery.scrollLeft) {
+        renderProfileCard(studentsInfo);
+        classGallery = document.querySelector('.class-gallery');
+        maxScrollLeft = classGallery.scrollWidth - classGallery.clientWidth;
+    }
+}
+
+classGallery.addEventListener('scroll', scrollRun);
