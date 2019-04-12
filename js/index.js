@@ -2,7 +2,7 @@
 const classGallery = document.querySelector('.class-gallery');
 let showInfo;
 
-const buildProfileCard = (
+const buildProfileCard = ({
     firstName,
     lastName,
     title,
@@ -14,8 +14,8 @@ const buildProfileCard = (
     motivatesMe,
     longTermVision,
     whySofterDeveloper,
-    skills
-) => {
+    skills,
+}) => {
     const profileCard = document.createElement('div');
     profileCard.classList.add('profile-card');
     profileCard.innerHTML = `<div class="front-face" style="background-image: url(../assets/profile-pictures/${src})"></div>
@@ -34,36 +34,7 @@ const buildProfileCard = (
 };
 
 const renderProfileCard = arr => {
-    arr.forEach(student => {
-        const {
-            firstName,
-            lastName,
-            title,
-            nationality,
-            src,
-            favoriteQuote,
-            alt,
-            joinedOn,
-            motivatesMe,
-            longTermVision,
-            whySofterDeveloper,
-            skills
-        } = student;
-        buildProfileCard(
-            firstName,
-            lastName,
-            title,
-            nationality,
-            src,
-            favoriteQuote,
-            alt,
-            joinedOn,
-            motivatesMe,
-            longTermVision,
-            whySofterDeveloper,
-            skills
-        );
-    });
+    arr.forEach(student => buildProfileCard(student));
 };
 
 renderProfileCard(studentsInfo);
@@ -77,14 +48,19 @@ function flipCard() {
     console.log(this.dataset);
     this.classList.toggle('flip');
 }
+<<<<<<< HEAD
 profileCards.forEach(profileCard =>
     profileCard.addEventListener('click', flipCard)
 );
 
+=======
+profileCards.forEach(profileCard => profileCard.addEventListener('click', flipCard));
+>>>>>>> 4c49b5803249a6f59cc340a083393802f853453f
 // ***** hover function ****
 function onMouseEnter() {
     console.log(this);
 
+<<<<<<< HEAD
     let that = this;
     setTimeout(function run() {
         console.log(that);
@@ -95,41 +71,48 @@ function onMouseEnter() {
         </div>`;
         that.querySelector('.front-face').innerHTML = content;
     }, 500);
+=======
+    frontFaces.forEach(front => (front.innerHTML = ''));
+    this.querySelector('.front-face').innerHTML = this.querySelector('.back-face h2').textContent;
+>>>>>>> 4c49b5803249a6f59cc340a083393802f853453f
 }
-profileCards.forEach(profileCard =>
-    profileCard.addEventListener('mouseenter', onMouseEnter)
-);
+profileCards.forEach(profileCard => profileCard.addEventListener('mouseenter', onMouseEnter));
 
-/* ************ click and drop ************** */
+/* ************ arrow left and right scroll ************** */
 
-const slider = document.querySelector('.class-gallery');
-let isDown = false;
-let startX;
-let scrollLeft;
-slider.addEventListener('mousedown', e => {
-    isDown = true;
-    slider.classList.add('active');
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
+const arrowWrapper = document.querySelectorAll('.arrow');
+let interval;
+let speed = 0;
+// doScroll('right');
+function doScroll(direction) {
+    console.log(speed);
+
+    clearInterval(interval);
+    interval = setInterval(function run() {
+        if (direction === 'right') {
+            classGallery.scrollLeft += 1 + speed;
+        } else {
+            classGallery.scrollLeft -= 1 + speed;
+        }
+    }, 10);
+
+    speed += 2;
+}
+
+function mouseEnter(e) {
+    const { direction } = e.target.dataset;
+    console.log(direction);
+
+    doScroll(direction);
+}
+
+arrowWrapper.forEach(arrow => {
+    console.log(arrow);
+
+    arrow.addEventListener('click', mouseEnter);
+    arrow.addEventListener('mouseleave', () => {
+        console.log('clear');
+        clearInterval(interval);
+        speed = 0;
+    });
 });
-slider.addEventListener('mouseleave', () => {
-    isDown = false;
-    slider.classList.remove('active');
-});
-slider.addEventListener('mouseup', () => {
-    isDown = false;
-    slider.classList.remove('active');
-});
-slider.addEventListener('mousemove', e => {
-    if (!isDown) return;
-    // stop click insitde in text
-    // e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    // console.log({ x, startX });
-    const walk = (x - startX) * 3;
-    // slider.scrollLeft = scrollLeft - walk;
-});
-// const image = document.querySelector('img');
-// image.addEventListener('click', e => {
-//     console.log('image click');
-// });
