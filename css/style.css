@@ -92,7 +92,7 @@ body {
 /*  ***** front info hover ***** */
 
 .front-face-info {
-    top: 100%;
+    margin-top: 60vh;
     padding: 15px;
     color: #ffb600;
     /* opacity: 0; */
