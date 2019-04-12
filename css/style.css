@@ -37,6 +37,7 @@ body {
     transition: transform 0.2s;
     /* border: 1px solid black; */
 }
+
 .profile-card:hover {
     /* flex: 4; */
     flex: 4 0 calc(400px);
@@ -69,8 +70,49 @@ body {
 
 .back-face {
     height: 100%;
-    background: blue;
+    background: orange;
     transform: rotateY(180deg);
+    text-align: center;
+    font-weight: 100px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.back-face h2 {
+    margin-top: 50px;
+}
+
+.back-face .title,
+.nationality,
+.skills,
+.why-developer,
+.vision,
+.motivation,
+.quote,
+.joined-on {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.back-face .nationality {
+    font-weight: normal;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.back-face  span {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.back-face .skills {
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.back-face .skills span {
+    font-weight: bold;
+    font-size: 25px;
 }
 
 .front-face {
@@ -133,6 +175,7 @@ body {
 .profile-card {
     /* display: inline-flex; */
     /* flex-wrap: wrap; */
+ 
 }
 
 @media only screen and (min-width: 600px) {
@@ -140,3 +183,4 @@ body {
         display: flex;
     }
 }
+ 
