@@ -40,7 +40,7 @@ body {
 .profile-card:hover {
     /* flex: 4; */
     flex: 4 0 calc(400px);
-    transition: all 0.7s ease-in 0.4s;
+    transition: all 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11) 0.5s;
 }
 
 .profile-card:hover .front-face {
@@ -51,7 +51,7 @@ body {
 }
 
 .profile-card:active {
-    transform: scale(0.75);
+    transform: scale(0.95);
     transition: transform 0.2s;
 }
 

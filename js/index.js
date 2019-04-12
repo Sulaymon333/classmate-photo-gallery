@@ -80,14 +80,21 @@ function flipCard() {
 profileCards.forEach(profileCard =>
     profileCard.addEventListener('click', flipCard)
 );
+
 // ***** hover function ****
 function onMouseEnter() {
     console.log(this);
 
-    frontFaces.forEach(front => (front.innerHTML = ''));
-    this.querySelector('.front-face').innerHTML = this.querySelector(
-        '.back-face h2'
-    ).textContent;
+    let that = this;
+    setTimeout(function run() {
+        console.log(that);
+        frontFaces.forEach(front => (front.innerHTML = ''));
+        content = `<div class="front-face-info">
+        <h2>${that.querySelector('.name').textContent}</h2>
+        <h3>${that.querySelector('.nationality').textContent}</h3>
+        </div>`;
+        that.querySelector('.front-face').innerHTML = content;
+    }, 500);
 }
 profileCards.forEach(profileCard =>
     profileCard.addEventListener('mouseenter', onMouseEnter)
