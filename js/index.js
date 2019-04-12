@@ -43,8 +43,8 @@ const renderProfileCard = arr => {
 
 renderProfileCard(studentsInfo);
 
-const profileCards = document.querySelectorAll('.profile-card');
-const frontFaces = document.querySelectorAll('.front-face');
+let profileCards = document.querySelectorAll('.profile-card');
+let frontFaces = document.querySelectorAll('.front-face');
 
 // ***** Flip card funtion *****
 
@@ -64,7 +64,7 @@ profileCards.forEach(card =>
 );
 // ***** hover function ****
 function onMouseEnter() {
-    let that = this;
+    const that = this;
     // setTimeout(function run() {
     frontFaces.forEach(front => (front.innerHTML = ''));
     content = `<div class="front-face-info">
@@ -74,7 +74,7 @@ function onMouseEnter() {
         </div>`;
     that.querySelector('.front-face').innerHTML = content;
 
-    let frontFaceInfo = document.querySelector('.front-face-info');
+    const frontFaceInfo = document.querySelector('.front-face-info');
     frontFaceInfo.style.opacity = 0;
 
     setInterval(function() {
@@ -141,6 +141,21 @@ function scrollRun() {
         renderProfileCard(studentsInfo);
         classGallery = document.querySelector('.class-gallery');
         maxScrollLeft = classGallery.scrollWidth - classGallery.clientWidth;
+
+        // add event
+        profileCards = document.querySelectorAll('.profile-card');
+        frontFaces = document.querySelectorAll('.front-face');
+        profileCards.forEach(profileCard =>
+            profileCard.addEventListener('click', flipCard)
+        );
+        profileCards.forEach(profileCard =>
+            profileCard.addEventListener('mouseenter', onMouseEnter)
+        );
+        profileCards.forEach(profileCard =>
+            profileCard.addEventListener('mouseleave', () => {
+                frontFaces.forEach(front => (front.innerHTML = ''));
+            })
+        );
     }
 }
 
