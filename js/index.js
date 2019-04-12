@@ -30,14 +30,13 @@ const buildProfileCard = ({
                 <p class="motivation"><span>Motivation</span></br>${motivatesMe}</p>
                 <p class="quote"><span>Quote</span></br>${favoriteQuote}</p>
                 <h4 class="joined-on"><span>Joined-On</span></br>${joinedOn}</h4>
-            </div>`
- 
+            </div>`;
+
     classGallery.appendChild(profileCard);
 };
 
 const renderProfileCard = arr => {
     arr.forEach(student => buildProfileCard(student));
-    console.log('run profiilce');
 };
 
 renderProfileCard(studentsInfo);
@@ -54,7 +53,7 @@ function flipCard() {
 profileCards.forEach(profileCard => profileCard.addEventListener('click', flipCard));
 // ***** hover function ****
 function onMouseEnter() {
-    // console.log(this);
+    console.log(this);
 
     frontFaces.forEach(front => (front.innerHTML = ''));
     this.querySelector('.front-face').innerHTML = this.querySelector('.back-face h2').textContent;
