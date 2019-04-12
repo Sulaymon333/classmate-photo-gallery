@@ -25,11 +25,6 @@ body {
     perspective: 1000px;
 }
 
-.class-gallery {
-    width: 2956px;
-    height: 500px;
-}
-
 .profile-card {
     /* flex: 1; */
     /* width: calc(15%); */
