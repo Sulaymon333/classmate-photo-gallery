@@ -82,8 +82,8 @@ body {
     /* margin: auto; */
     height: 100%;
     background: #ffb600;
-    /* background-image: linear-gradient(to bottom, #ffb600, #ffbb00); */
     border: 1px solid black;
+    /* border: 1px solid black; */
     transform: rotateY(180deg);
     text-align: center;
     /* font-weight: 100px; */
@@ -228,5 +228,14 @@ body {
 @media only screen and (min-width: 600px) {
     .arrow-wrapper {
         display: flex;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .logo img {
+        width: 100px;
+    }
+    .logo {
+        flex-wrap: wrap;
     }
 }

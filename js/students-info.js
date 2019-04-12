@@ -11,7 +11,7 @@ const studentsInfo = [
         longTermVision: ' Remote Work  LOL',
         motivatesMe: ' basically everything ',
         favoriteQuote: ' No man is an island',
-        joinedOn: '17.01.2019'
+        joinedOn: '17.01.2019',
     },
 
     {
@@ -26,7 +26,7 @@ const studentsInfo = [
         longTermVision: 'Full Stack Developer',
         motivatesMe: 'fixed it',
         favoriteQuote: 'Happiness is on the way not at the end',
-        joinedOn: '21.01.2019'
+        joinedOn: '21.01.2019',
     },
 
     {
@@ -41,7 +41,7 @@ const studentsInfo = [
         longTermVision: 'Become a problem solver and helping other people using technology',
         motivatesMe: 'When I can use my code to solve a real life problem',
         favoriteQuote: 'Code solve problems, and it can make the world a better place. Do good with code',
-        joinedOn: '21.01.2019'
+        joinedOn: '21.01.2019',
     },
 
     {
@@ -56,7 +56,7 @@ const studentsInfo = [
         longTermVision: 'Be involved as a senior developer or team leader in a gaming related project',
         motivatesMe: 'learning something new, to be part of a creative and progressive group of people',
         favoriteQuote: '',
-        joinedOn: '21.01.2019'
+        joinedOn: '21.01.2019',
     },
 
     {
@@ -71,7 +71,7 @@ const studentsInfo = [
         longTermVision: 'To become as an Full Stack Developer',
         motivatesMe: 'Solution for the problem',
         favoriteQuote: 'Slow and steady win the race',
-        joinedOn: '21.01.19'
+        joinedOn: '21.01.19',
     },
 
     {
@@ -87,7 +87,7 @@ const studentsInfo = [
         motivatesMe: 'Science, art, technology, and communities.',
         favoriteQuote:
             '“And stepped, not left or right, forward or back, but in another direction entirely” - The Long Mars, by Terry Pratchett and Stephen Baxter',
-        joinedOn: '21.01.2019'
+        joinedOn: '21.01.2019',
     },
 
     {
@@ -102,7 +102,7 @@ const studentsInfo = [
         longTermVision: 'Being good developer and designer',
         motivatesMe: 'Success, Money',
         favoriteQuote: '',
-        joinedOn: '21.01.2019'
+        joinedOn: '21.01.2019',
     },
 
     {
@@ -118,7 +118,7 @@ const studentsInfo = [
         longTermVision: 'Happiness',
         motivatesMe: 'Adventures',
         favoriteQuote: 'The most amazing combinations can result if you shuffle the pack enough.',
-        joinedOn: '21.1.2019'
+        joinedOn: '21.1.2019',
     },
     {
         firstName: 'André',
@@ -132,7 +132,7 @@ const studentsInfo = [
         longTermVision: 'Success and Happiness as a Front-End Developer with a focus on UI Design',
         motivatesMe: 'Happiness',
         favoriteQuote: 'If you are the smartest person in the room, you are in the wrong room',
-        joinedOn: '21.01.2019'
+        joinedOn: '21.01.2019',
     },
 
     {
@@ -147,7 +147,7 @@ const studentsInfo = [
         longTermVision: 'Success and happiness in the future',
         motivatesMe: 'positive energy and Happiness',
         favoriteQuote: "life is what happens when you're busy making other plans",
-        joinedOn: '21.01.2019'
+        joinedOn: '21.01.2019',
     },
 
     {
@@ -162,7 +162,7 @@ const studentsInfo = [
         longTermVision: 'Full-stack Developer',
         motivatesMe: 'simplify the problem',
         favoriteQuote: 'Time will tell',
-        joinedOn: '21.01.2019'
+        joinedOn: '21.01.2019',
     },
 
     {
@@ -177,7 +177,7 @@ const studentsInfo = [
         longTermVision: 'To be a professional developer',
         motivatesMe: 'Learning new things and noticing improvement',
         favoriteQuote: 'Every moment is a fresh beginning. T.S. Eliot',
-        joinedOn: '21.01.2019'
+        joinedOn: '21.01.2019',
     },
 
     {
@@ -192,7 +192,7 @@ const studentsInfo = [
         longTermVision: 'Become a successful web developer',
         motivatesMe: 'Learning',
         favoriteQuote: '',
-        joinedOn: '21.01.2019'
+        joinedOn: '21.01.2019',
     },
 
     {
@@ -208,7 +208,7 @@ const studentsInfo = [
         longTermVision: 'Become a full-stack developer by 2023',
         motivatesMe: 'Building things by writing codes',
         favoriteQuote: 'The mind is everything. What you think, you become.',
-        joinedOn: '21.01.2019'
+        joinedOn: '21.01.2019',
     },
 
     {
@@ -223,7 +223,7 @@ const studentsInfo = [
         longTermVision: 'develop an online marketing web App',
         motivatesMe: ' learning new features',
         favoriteQuote: 'online marketing',
-        joinedOn: '21.01.2019'
+        joinedOn: '21.01.2019',
     },
 
     {
@@ -238,7 +238,7 @@ const studentsInfo = [
         longTermVision: 'Full stack developer/e-learning developer',
         motivatesMe: 'Becoming a better version of myself and making the most of my life while I am still alive.',
         favoriteQuote: 'To be without dreams is to be without hope, to be without hope is to be without purpose!',
-        joinedOn: '21.01.2019'
+        joinedOn: '21.01.2019',
     },
 
     {
@@ -246,14 +246,14 @@ const studentsInfo = [
         lastName: 'Yousaf',
         title: 'Junior developer.',
         nationality: 'Pakistani',
-        src: 'Husham.jpg',
+        src: 'husham.jpg',
         alt: '',
         skills: ['HTML', 'JavaScript', 'CSS'],
         whySofterDeveloper: 'To solve problems',
         longTermVision: 'To solve problems with the help of Technology',
         motivatesMe: 'Problems',
         favoriteQuote: 'Try Try again',
-        joinedOn: '21.01.2019'
+        joinedOn: '21.01.2019',
     },
 
     {
@@ -268,7 +268,7 @@ const studentsInfo = [
         longTermVision: 'Continue to learn, gain skills  and better myself every day of my life',
         motivatesMe: 'Knowledge. I love to have power of knowing things',
         favoriteQuote: 'With great power comes great initial confusion',
-        joinedOn: '21.01.2019'
+        joinedOn: '21.01.2019',
     },
 
     {
@@ -284,7 +284,7 @@ const studentsInfo = [
         motivatesMe: 'Pursuing what I love',
         favoriteQuote:
             'If you don’t like something, change it. If you can’t change it, change the way you think about it.',
-        joinedOn: '21.01.2019'
+        joinedOn: '21.01.2019',
     },
 
     {
@@ -301,7 +301,7 @@ const studentsInfo = [
         motivatesMe: 'People',
         favoriteQuote:
             'Sow a thought and you reap an action;sow an act and you reap a habit;sow a habit and you reap a character;sow a character and you reap a destiny.',
-        joinedOn: '21.01 .2019'
+        joinedOn: '21.01 .2019',
     },
 
     {
@@ -316,6 +316,6 @@ const studentsInfo = [
         longTermVision: 'Full-Stack Developer',
         motivatesMe: 'My Family',
         favoriteQuote: 'Be the change that you wish to see in the world. Mahatma Gandhi',
-        joinedOn: '21.01.2019'
-    }
+        joinedOn: '21.01.2019',
+    },
 ];
