@@ -18,7 +18,7 @@ const buildProfileCard = ({
 }) => {
     const profileCard = document.createElement('div');
     profileCard.classList.add('profile-card');
-    profileCard.innerHTML = `<div class="front-face" style="background-image: url(../assets/profile-pictures/${src})"></div>
+    profileCard.innerHTML = `<div class="front-face" style="background-image: url(./assets/profile-pictures/${src})"></div>
             <div class="back-face profile-info">
                 <h2 class="name">${firstName} ${lastName}</h2>
                 <h3 class="title">${title}</h3>
