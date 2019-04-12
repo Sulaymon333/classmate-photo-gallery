@@ -1,8 +1,9 @@
 // **** Get DOM elements ****
 const classGallery = document.querySelector('.class-gallery');
+let showInfo;
 
-
-const buildProfileCard = (firstName,
+const buildProfileCard = ({
+    firstName,
     lastName,
     title,
     nationality,
@@ -13,14 +14,15 @@ const buildProfileCard = (firstName,
     motivatesMe,
     longTermVision,
     whySofterDeveloper,
-    skills) => {
+    skills,
+}) => {
     const profileCard = document.createElement('div');
     profileCard.classList.add('profile-card');
-    profileCard.innerHTML =
-        `<div class="front-face" style="background-image: url(../assets/profile-pictures/${src})"></div>
+    profileCard.innerHTML = `<div class="front-face" style="background-image: url(../assets/profile-pictures/${src})"></div>
             <div class="back-face profile-info">
                 <h2 class="name">${firstName} ${lastName}</h2>
                 <h3 class="title">${title}</h3>
+ 
                 <h3 class="nationality"><span> Nationality</span></br>${nationality}</h3>
                 <h3 class="skills"><span>Skills</span></br>${skills.join(', ')}</h3>
                 <p class="why-developer"><span>Why-developer</span></br>${whySofterDeveloper}</p>
@@ -29,90 +31,70 @@ const buildProfileCard = (firstName,
                 <p class="quote"><span>Quote</span></br>${favoriteQuote}</p>
                 <h4 class="joined-on"><span>Joined-On</span></br>${joinedOn}</h4>
             </div>`
+ 
     classGallery.appendChild(profileCard);
-}
+};
 
-const renderProfileCard = (arr) => {
+const renderProfileCard = arr => {
+    arr.forEach(student => buildProfileCard(student));
+};
 
-    arr.forEach(student => {
-        const {
-            firstName,
-            lastName,
-            title,
-            nationality,
-            src,
-            favoriteQuote,
-            alt,
-            joinedOn,
-            motivatesMe,
-            longTermVision,
-            whySofterDeveloper,
-            skills
-        } = student;
-        buildProfileCard(firstName,
-            lastName,
-            title,
-            nationality,
-            src,
-            favoriteQuote,
-            alt,
-            joinedOn,
-            motivatesMe,
-            longTermVision,
-            whySofterDeveloper,
-            skills)
-    });
-}
-
-renderProfileCard(studentsInfo)
-
+renderProfileCard(studentsInfo);
 
 const profileCards = document.querySelectorAll('.profile-card');
+const frontFaces = document.querySelectorAll('.front-face');
+
+// ***** Flip card funtion *****
 
 function flipCard() {
-    console.log(this);
-
     console.log(this.dataset);
-
     this.classList.toggle('flip');
 }
 profileCards.forEach(profileCard => profileCard.addEventListener('click', flipCard));
 // ***** hover function ****
-function toggleOpen() {
-    console.log('Hello');
-    this.classList.toggle('open');
+function onMouseEnter() {
+    console.log(this);
+
+    frontFaces.forEach(front => (front.innerHTML = ''));
+    this.querySelector('.front-face').innerHTML = this.querySelector('.back-face h2').textContent;
+}
+profileCards.forEach(profileCard => profileCard.addEventListener('mouseenter', onMouseEnter));
+
+/* ************ arrow left and right scroll ************** */
+
+const arrowWrapper = document.querySelectorAll('.arrow');
+let interval;
+let speed = 0;
+// doScroll('right');
+function doScroll(direction) {
+    console.log(speed);
+
+    clearInterval(interval);
+    interval = setInterval(function run() {
+        if (direction === 'right') {
+            classGallery.scrollLeft += 1 + speed;
+        } else {
+            classGallery.scrollLeft -= 1 + speed;
+        }
+    }, 10);
+
+    speed += 2;
 }
 
-/* ************ click and drop ************** */
+function mouseEnter(e) {
+    const { direction } = e.target.dataset;
+    console.log(direction);
 
-const slider = document.querySelector('.class-gallery');
-let isDown = false;
-let startX;
-let scrollLeft;
-slider.addEventListener('mousedown', e => {
-    isDown = true;
-    slider.classList.add('active');
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
+    doScroll(direction);
+}
+
+arrowWrapper.forEach(arrow => {
+    console.log(arrow);
+
+    arrow.addEventListener('click', mouseEnter);
+    arrow.addEventListener('mouseleave', () => {
+        console.log('clear');
+        clearInterval(interval);
+        speed = 0;
+    });
 });
-slider.addEventListener('mouseleave', () => {
-    isDown = false;
-    slider.classList.remove('active');
-});
-slider.addEventListener('mouseup', () => {
-    isDown = false;
-    slider.classList.remove('active');
-});
-slider.addEventListener('mousemove', e => {
-    if (!isDown) return;
-    // stop click insitde in text
-    // e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    // console.log({ x, startX });
-    const walk = (x - startX) * 3;
-    // slider.scrollLeft = scrollLeft - walk;
-});
-// const image = document.querySelector('img');
-// image.addEventListener('click', e => {
-//     console.log('image click');
-// });
