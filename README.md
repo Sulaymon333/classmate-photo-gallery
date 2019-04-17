@@ -1,4 +1,4 @@
-# Developing an interactive Country information finder App
+# Developing a photo gallery for Integrify students (Winter 2019 batch)
 
 This project is developed to display photo gallery for all the students at Integrify Academy, Helsinki winter 2019 batch . It was developed using ONLY Vanilla JavaScript. Happy Coding 😀.
 
